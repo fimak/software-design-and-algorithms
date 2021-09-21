@@ -10,7 +10,6 @@ export class Triangle extends Shape {
   }
 
   toString() {
-    console.log(this);
     const points = this.points.reduce((acc, point, index, arr) => {
       return `${acc}v${index + 1}=(${point.x}, ${point.y})${index < arr.length - 1 ? ',' : ''}`
     }, '');
