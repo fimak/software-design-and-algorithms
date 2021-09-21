@@ -32,8 +32,6 @@ export class Triangle extends Shape {
 
     const uniqSides = Array.from(new Set(sides));
 
-    console.log(sides, uniqSides);
-
     if (uniqSides.length === 1) {
       return 'equilateral triangle';
     } else if (uniqSides.length === 2) {
