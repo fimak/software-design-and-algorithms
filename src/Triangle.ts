@@ -26,7 +26,7 @@ export class Triangle extends Shape {
         nextPoint = arr[index + 1];
       }
       const side = point.distance(nextPoint.x, nextPoint.y);
-      acc.push(side);
+      acc.push((Math.round((side + 0.0001) * 100000) / 10000).toFixed(2));
       return acc;
     }, []);
 
@@ -41,6 +41,4 @@ export class Triangle extends Shape {
     }
     return 'scalene triangle';
   }
-
-
 }
