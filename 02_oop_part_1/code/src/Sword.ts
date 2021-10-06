@@ -5,4 +5,7 @@ export class Sword extends Weapon {
     super('sword', baseDamage, baseDurability, value, weight);
   }
 
+  public polish() {
+    this.setDamageModifier()
+  }
 }

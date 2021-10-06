@@ -3,7 +3,7 @@ import { Item } from './Item';
 export abstract class Weapon extends Item {
   private readonly MODIFIER_CHANGE_RATE: number = 0.05;
   private readonly baseDamage: number;
-  private readonly damageModifier: number;
+  private damageModifier: number;
   private baseDurability: number;
   private readonly durabilityModifier: number;
 
@@ -21,9 +21,17 @@ export abstract class Weapon extends Item {
 
   public use(): string {
     if (this.baseDurability <= 0) {
-      return `${this.getName()} has broken!`;
+      return `You can't use the ${this.getName()}, it is broken!`;
     }
     this.baseDurability -= this.MODIFIER_CHANGE_RATE;
     return `You use the ${this.getName()}, dealing ${this.baseDamage + this.damageModifier} points of damage. ${this.baseDurability <= 0 ? `The ${this.getName()} breaks.` : ''}`;
+  }
+
+  public getDamageModifier() {
+    return this.damageModifier;
+  }
+
+  public setDamageModifier(modifier) {
+    this.damageModifier = modifier;
   }
 }
