@@ -1,4 +1,4 @@
-import Item from './Item';
+import { Item } from './Item';
 import { Pages } from './Pages';
 
 export class Book extends Item {
@@ -21,7 +21,7 @@ export class Book extends Item {
     this._pages = value;
   }
   constructor(private _title: string, private _author: string, private _pages: Pages) {
-    super();
+    super(_pages);
   }
   toString(): string {
     return `Book: ${this.title} by ${this.author} with number of pages: ${this.pages}`;

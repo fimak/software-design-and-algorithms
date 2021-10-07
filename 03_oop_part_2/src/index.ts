@@ -1,5 +1,6 @@
 import { Book } from './Book';
 import { Magazine } from './Magazine';
+import { Comics } from './Comics';
 import { MaterialType, Page, PageType } from './Page';
 import { Pages } from './Pages';
 

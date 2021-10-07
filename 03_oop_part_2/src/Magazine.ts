@@ -1,4 +1,4 @@
-import Item from './Item';
+import { Item } from './Item';
 import { Pages } from './Pages';
 
 export class Magazine extends Item {
@@ -15,7 +15,7 @@ export class Magazine extends Item {
     this._pages = value;
   }
   constructor(private _title: string, private _pages: Pages) {
-    super();
+    super(_pages);
   }
 
   toString(): string {
