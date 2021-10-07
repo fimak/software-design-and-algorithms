@@ -1,15 +1,13 @@
 import { Page } from './Page';
 
 export class Pages {
-  public list: Page[];
-  public length: number;
+  public pages: Page[];
 
-  constructor(list: Page[]) {
-    this.list = list;
-    this.length = list.length;
+  constructor(pages: Page[]) {
+    this.pages = pages;
   }
 
-  public getPageById(id: number): Page {
-    return this.list[id];
+  public getLength(): number {
+    return this.pages.length;
   }
 }

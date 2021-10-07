@@ -10,23 +10,15 @@ export enum MaterialType {
 }
 
 export class Page {
-  public get pageNumber(): number {
-    return this._pageNumber;
+  public pageNumber: number;
+  public pageType: string;
+  public pageMaterial: string;
+  constructor(pageNumber: number, pageType: string, pageMaterial: string) {
+    this.pageNumber = pageNumber;
+    this.pageType = pageType;
+    this.pageMaterial = pageMaterial;
   }
-  public set pageNumber(value: number) {
-    this._pageNumber = value;
+  toString(): string {
+    return `here is page ${this.pageType} #${this.pageNumber} and it\'s material is ${this.pageMaterial}`;
   }
-  public get pageType(): PageType {
-    return this._pageType;
-  }
-  public set pageType(value: PageType) {
-    this._pageType = value;
-  }
-  public get pageMaterial(): MaterialType {
-    return this._pageMaterial;
-  }
-  public set pageMaterial(value: MaterialType) {
-    this._pageMaterial = value;
-  }
-  constructor(private _pageNumber: number, private _pageType: PageType, private _pageMaterial: MaterialType) {}
 }
